@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    
+    <title>ROCK PAPPER SCISSORS</title>
+
+</head>
+
+<body>
+
+  <script>
+
+      let gamerounds=0
+    function computerplay() {
+      let choice;
+      let num = Math.floor(Math.random()*3);
+      if (num===0){
+        choice = 'Rock';
+      } else if(num===1){
+        choice = 'Paper';
+      } else{
+        choice = 'Scissors';
+      }
+      return choice;
+      
+  }
+
+    function playRound(playerSelection, computerSelection){
+            playerSelection = playerSelection.toLowerCase();
+            computerSelection = computerplay().toLowerCase();
+            let msg;
+            if(playerSelection===computerSelection){
+                msg = "It's a tie!"
+            }else if(playerSelection==='rock'){
+                if(computerSelection==='paper'){
+                    msg = "computer win.";
+                }else{
+                    msg = "congrats you win.";
+                }   
+            }else if(playerSelection==='paper'){
+                if(computerSelection==='rock'){
+                    msg = "congrats you win.";
+                }else{
+                    msg = "computer win.";
+                }
+            }else{
+                if(computerSelection==='rock'){
+                    msg = "computer win.";
+                }else{
+                    msg = "congrats you win.";
+                }
+            } 
+            return msg;
+        }
+
+    function game(){
+            while(gamerounds<5)
+            {
+
+                console.log(playRound(prompt("Rock, Paper, or Scissors?"), computerplay()));
+                gamerounds++
+            }
+        }
+        game();
+ 
+      
+
+  </script>
+
+</body>
+
+</html>
